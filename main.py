@@ -45,7 +45,23 @@ with open('/Users/freddy/Desktop/Monetcard Python/src/TabelleMonet.csv', 'r') as
     search_enter = browser.find_element_by_css_selector('input[type="submit"]')     # submit drücken
     search_enter.send_keys(Keys.RETURN)
 
-    #time.sleep(2)
+    
+
+    try: # get url 
+      url = WebDriverWait(browser, 10).until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, "cite.iUh30.Zu0yb.qLRx3b.tjvcx"))
+    )
+    except:
+      browser.quit
+
+    try: # get title
+      title = WebDriverWait(browser, 10).until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, "h3.LC20lb.DKV0Md"))
+    )
+    except:
+      browser.quit
+    #url = browser.find_element_by_class_name('cite.iUh30 Zu0yb qLRx3b tjvcx')
+    
 
     #heading3 = browser.find_element_by_class_name('LC20lb DKV0Md')
     #heading3.send_keys(Keys.RETURN)
@@ -63,11 +79,11 @@ with open('/Users/freddy/Desktop/Monetcard Python/src/TabelleMonet.csv', 'r') as
 
 
     #finally:             # finally = no matter what, quit // except = if it doesn't work, quit
-    time.sleep(2)
-    browser.quit()
+    #time.sleep(2)
+    #browser.quit()
 
 
-    Data.append([first_search , 'url' , 'h3']) # variable des google ergebnisses eifügen für url  # erweitere Data Liste um ergebnisse
+    Data.append([first_search , url , title]) # variable des google ergebnisses eifügen für url  # erweitere Data Liste um ergebnisse
 
 with open('/Users/freddy/Desktop/Monetcard Python/src/NewTabelleMonet.csv', 'w') as new_file: # wenn fertig, neue csv wird erstellt   
   csv_writer = csv.writer(new_file, delimiter=',') # erstelle writerobjekt (ich schreibe jetzt)

@@ -1,5 +1,5 @@
-Begriff,url,h3
-Amazon Ratenkauf,url,h3
-Amazon Rechnungskauf,url,h3
-Asos Ratenzahlung,url,h3
-H&M Ratenzahlung,url,h3
+Begriff,"<selenium.webdriver.remote.webelement.WebElement (session=""a640bab63adab62a42077f599d11ec1c"", element=""953ecabd-9f51-4405-9d82-2c27c7b0ea54"")>","<selenium.webdriver.remote.webelement.WebElement (session=""a640bab63adab62a42077f599d11ec1c"", element=""77926e10-ed12-4418-b2bf-003b48fe7148"")>"
+Amazon Ratenkauf,"<selenium.webdriver.remote.webelement.WebElement (session=""1c912b65b424548f1fab53a584eb7b42"", element=""e3711d8c-57f4-4d8e-93ff-488eb047bd69"")>","<selenium.webdriver.remote.webelement.WebElement (session=""1c912b65b424548f1fab53a584eb7b42"", element=""bd400b3d-7e40-4c49-a630-f2b93af6a913"")>"
+Amazon Rechnungskauf,"<selenium.webdriver.remote.webelement.WebElement (session=""e845543770b8068c752eef50f570c1ba"", element=""11ac0b0d-2852-4d46-937e-459ac47dcb6d"")>","<selenium.webdriver.remote.webelement.WebElement (session=""e845543770b8068c752eef50f570c1ba"", element=""dcdc4365-24ab-4124-b6f2-cb92d8531480"")>"
+Asos Ratenzahlung,"<selenium.webdriver.remote.webelement.WebElement (session=""9e7d09eaa4486407cd71ae01038eb03c"", element=""d285d744-7a31-4598-8c21-bd9722434306"")>","<selenium.webdriver.remote.webelement.WebElement (session=""9e7d09eaa4486407cd71ae01038eb03c"", element=""670353ea-2518-4b46-aaa2-96755fda7792"")>"
+H&M Ratenzahlung,"<selenium.webdriver.remote.webelement.WebElement (session=""7ccf403bce20fcdaa8055596ce84dc24"", element=""24707b1c-4f11-4d64-9337-536964d1aff9"")>","<selenium.webdriver.remote.webelement.WebElement (session=""7ccf403bce20fcdaa8055596ce84dc24"", element=""166a8455-13e2-4364-a496-14899e5de4a9"")>"
