@@ -45,14 +45,14 @@ with open('/Users/freddy/Desktop/Monetcard Python/src/TabelleMonet.csv', 'r') as
     search_enter = browser.find_element_by_css_selector('input[type="submit"]')     # submit drücken
     search_enter.send_keys(Keys.RETURN)
 
-    
-
-    try: # get url 
-      url = WebDriverWait(browser, 10).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, "cite.iUh30.Zu0yb.qLRx3b.tjvcx"))
-    )
-    except:
-      browser.quit
+    url = browser.find_elements_by_css_selector("div[data-hveid='CAMQAA'] a cite[class='iUh30 Zu0yb qLRx3b tjvcx']")
+    print(url)
+    #try: # get url 
+     # url = WebDriverWait(browser, 10).until(
+      #  EC.presence_of_element_located((By.CSS_SELECTOR, "cite.iUh30.Zu0yb.qLRx3b.tjvcx"))
+    #)
+    #except:
+     # browser.quit
 
     try: # get title
       title = WebDriverWait(browser, 10).until(
