@@ -28,7 +28,7 @@ with open('/Users/freddy/Desktop/Monetcard Python/src/TabelleMonet.csv', 'r') as
     consent_agb = browser.find_element_by_id('L2AGLb')         # Datenschutz zustimmen, wenn dies nicht angezeigt wird kann es auskommentiert werden
     consent_agb.send_keys(Keys.RETURN)
 
-    time.sleep(2)
+    time.sleep(2)                             # time.sleep = warten bis Seite vollständig geladen
 
     search_input = browser.find_element_by_name('q')            # Suchfeld anwählen und eingeben 
     search_input.send_keys(first_search)
@@ -38,20 +38,13 @@ with open('/Users/freddy/Desktop/Monetcard Python/src/TabelleMonet.csv', 'r') as
     search_enter = browser.find_element_by_css_selector('input[type="submit"]')        # submit drücken
     search_enter.send_keys(Keys.RETURN)
 
+    time.sleep(3)
 
-    try:          # get url 
-      url = WebDriverWait(browser, 10).until(              # Browser wartet bis Css Selektor angewendet werden kann 
-        EC.presence_of_element_located((By.CSS_SELECTOR, "cite.iUh30.Zu0yb.qLRx3b.tjvcx"))             # Css Selektor für class in der der Text steht -> wie kann ich aus dem Element den Text extrahieren ?
-    )
-    except:
-      browser.quit
+    h3_headings = browser.find_elements_by_xpath('//h3')      #  h3 Element aufrufen 
+    title =  h3_headings[0].text                            # Text des ersten Elementes aus der Ergebnisseite als Variable definieren
 
-    try:          # get title
-      title = WebDriverWait(browser, 10).until(               # browser wartet bis css selektor angewendet werden kann 
-        EC.presence_of_element_located((By.CSS_SELECTOR, "h3.LC20lb.DKV0Md"))                # Css Selektor für class in der der text steht -> wie kann ich aus dem Element den Text extrahieren ?
-    )
-    except:                   # finally = no matter what, quit // except = if it doesn't work, quit
-      browser.quit            # Browser wird nach der Suche jedes einzelnen Begriffs beendet (und danach wieder gestartet)
+    url_first_element = browser.find_element_by_xpath('//cite')   #  cite Element aufrufen 
+    url = url_first_element.text                              # Text des Ersten Elementes aus der Ergebnisseite als Variable definieren
 
 
     Data.append([first_search , url , title])                  # erweitere Data Liste um Suchergebnisse
